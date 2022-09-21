@@ -1,0 +1,52 @@
+.one{
+    background-color: red;
+    height: 50px;
+}
+
+.two{
+    background-color: green;
+    height: 50px;
+}
+
+.three{
+    background-color: blue;
+    height: 50px;
+}
+
+.form{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid;
+    border-color: rgb(114, 112, 112);
+    -webkit-box-shadow: 13px 10px 13px 4px rgba(196,186,196,0.55);
+-moz-box-shadow: 13px 10px 13px 4px rgba(196,186,196,0.55);
+box-shadow: 13px 10px 13px 4px rgba(196,186,196,0.55);
+}
+.title{
+    text-align: center;
+}
+.labels{
+    margin-left: auto;
+    margin-right: auto;
+}
+hr{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.botonIni{
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+#exampleFormControlInput1{
+    border-top: none;
+    border-radius: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+    border-color: black;
+}

@@ -1,0 +1,71 @@
+.formfields{
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px white solid;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 8px 4px 8px rgb(36, 32, 32);
+}
+
+.form{
+    background-color: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+[type="text"], [type = "password"], [type = "email"]{
+    display: block;
+    width: 98%;
+    height: 25px;
+    margin-bottom: 10px;
+    /*border-radius: 5px;*/
+    border: 0;
+    border-bottom: 2px solid black;
+}
+
+.date{
+    display: block;
+}
+.ec{
+    display: block;
+}
+
+label{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+[type=date]{
+    display: block;
+    height: 25px;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+[type="submit"]{
+    margin-top: 20px;
+    margin-top: 10px;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px white;
+    float: right;
+    background-color: black;
+    color: white;
+
+}
+
+legend{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}

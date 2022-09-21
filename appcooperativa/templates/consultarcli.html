@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    <link rel="stylesheet" href='{% static "css/page.css" %}'>
+    <link rel="stylesheet" href='{% static "css/table.css" %}'>
+    <title>Clients</title>
+</head>
+<body>
+    <header class="contenedorheader" id="contenedorheader">
+        <div class="titulologo">
+            <h1 class="titulo">Behind The Code!!!</h1>
+            <div class="logo"></div>
+        </div>
+        <nav class="navegacion">
+            <ul class="lista">
+                <li class="items"><a href="/newuser/">Nuevo</a></li>
+                <li class="items"><a href="">Our Services</a></li>
+                <li class="items"><a href="consultarCliente.html">Our Clients</a></li>
+                <li class="items"><a href="frmCliente.html">Add Client</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="sectionthree">
+        <table class="datatable">
+            <div class="titletable">Users</div>
+            <tr>
+                <th>Documento</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Celular</th>
+            </tr>
+            {% for i in cli%}
+            <tr>
+                <td>{{i.documento}}</td>
+                <td>{{i.nombre}}</td>
+                <td>{{i.apellido}}</td>
+                <td>{{i.correo}}</td>
+                <td>{{i.celular}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</body>
+</html>
