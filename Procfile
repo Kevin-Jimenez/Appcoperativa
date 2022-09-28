@@ -1,1 +1,1 @@
-web: testdezpliege.wsgi
+web: gunicorn testdezpliege.wsgi
