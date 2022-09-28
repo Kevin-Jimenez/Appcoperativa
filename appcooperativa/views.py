@@ -3,7 +3,7 @@ from re import template
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.views import View
-from .models import Cliente, Usuario
+from .models import Cliente, Credito, Usuario
 from django.http.response import JsonResponse
 import json
 from django.utils.decorators import method_decorator
@@ -98,9 +98,11 @@ def loginUser(request):
     if(request.method=='POST'):
         try:
             validationUser = Usuario.objects.get(nameuser=request.POST['nameuser'],password=request.POST['password'])
+            print(validationUser.Document)
             print(validationUser.rol)
             if (validationUser.rol=="Admin"):
                 request.session['nameuser']=validationUser.nameuser
+                request.session['Document']=validationUser.Document
                 return render(request,'admin.html')
             elif (validationUser.rol=="Empleado"):
                 request.session['nameuser']=validationUser.nameuser
@@ -114,6 +116,38 @@ def loginUser(request):
 
 def formRegister(request):
     return render(request,'adduser.html')
+
+def formUpdate(request, doc):
+    cliente = Cliente.objects.get(documento=doc)
+    data={
+        'cliente': cliente
+    }
+
+    return render(request, 'actualizaruser.html', data)
+
+def updateCliente(request):
+    documento=request.POST['documento']
+    nombre=request.POST['nombre']
+    apellido=request.POST['apellido']
+    correo=request.POST['correo']
+    celular=request.POST['celular']
+    cli=Cliente.objects.get(documento=documento)
+    cli.nombre=nombre
+    cli.apellido=apellido
+    cli.correo=correo
+    cli.celular=celular
+    cli.save()
+    return redirect('/cliente/')
+
+def deleteCliente(request, doc):
+    Cliente.objects.filter(documento = doc).delete()
+    return redirect('/cliente/')
+
+def exampleJoin(request, doc):
+    data=Credito.objects.select_related('documento').filter(documento = doc)
+    template_name="join.html"
+    dat={"lista":data}
+    return render(request,template_name,dat)
 
 
 

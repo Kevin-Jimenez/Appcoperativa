@@ -11,6 +11,14 @@ urlpatterns=[
 
     path('login/',views.loginUser, name="Login"),
 
-    path('newuser/', views.formRegister, name="Formulario Nuevo Usuario")
+    path('newuser/', views.formRegister, name="Formulario Nuevo Usuario"),
+
+    path('actualizar/<int:doc>', views.formUpdate , name="Formulario Actualizar Usuario"),
+
+    path('actualizarc/', views.updateCliente  ,name="Actualiza el cliente"),
+
+    path('eliminar/<int:doc>', views.deleteCliente , name="Eliminar Usuario"),
+
+    path('consultajoin/<int:doc>', views.exampleJoin, name="Ejemplo JOin")
     
 ]

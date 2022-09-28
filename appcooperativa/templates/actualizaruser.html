@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "css/style.css"  %}'>
+    <link rel="stylesheet" href='{% static "css/page.css"  %}'>
+    <link rel="stylesheet" href='{% static "css/form.css"  %}'>
+    <title>Form Client</title>
+</head>
+<body>
+    <header class="contenedorheader" id="contenedorheader">
+        <div class="titulologo">
+            <h1 class="titulo">Behind The Code!!!</h1>
+            <div class="logo"></div>
+        </div>
+        <nav class="navegacion">
+            <ul class="lista">
+                <li class="items"><a href="/cliente/">Volver</a></li>
+                <li class="items"><a href="">Our Services</a></li>
+                <li class="items"><a href="consultarCliente.html">Our Clients</a></li>
+                <li class="items"><a href="frmCliente.html">Add Client</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="sectiontwo">
+        <fieldset class="formfields">
+            
+            <form action="/actualizarc/" method="POST" class="form">
+                <legend>Information</legend>
+                {% csrf_token %}
+                <label for="documento"> 
+                    <input type="hidden" name="documento" value="{{cliente.documento}}" id="fm" placeholder="Digite documento">
+                </label>
+                <label for="nombre">Nombre: 
+                    <input type="text" name="nombre" value="{{cliente.nombre}}" id="ea" placeholder="Digite su nombre">
+                </label>
+                <label for="apellido">Apellido: 
+                    <input type="text" name="apellido" value="{{cliente.apellido}}" id="ps" placeholder="Digite su apellido">
+                </label>
+                <label for="correo">Correo: 
+                    <input type="email" name="correo" value="{{cliente.correo}}" id="ad" placeholder="ejemplo@gmail.com">
+                </label>
+                <label for="celular" class="date">Celular: 
+                    <input type="text" name="celular" value="{{cliente.celular}}" id="dt">
+                </label>
+                <input type="submit" value="Guardar"> <br>
+            </form>
+        </fieldset>
+    </section>
+</body>
+</html>

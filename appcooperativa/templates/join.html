@@ -8,15 +8,27 @@
     <title>Document</title>
     {% if request.session.nameuser %}
     <span>{{request.session.nameuser}}</span>
-    <span>{{request.session.Document}}</span>
-
-    <a href="/actualizar/{{request.session.Document}}"> Hola</a>
-
 </head>
 <body>
     <h1>Welcome Admin</h1>
     <a href="/newuser/">Register Clientes</a>
     <a href="/cliente/">View Clientes</a>
+    <table>
+        <tr>
+            <th>Documento</th>
+            <th>Nombre</th>
+            <th>Codigo Credito</th>
+            <th>Monto</th>
+        </tr>
+        {% for i in lista%}
+        <tr>
+            <td>{{i.documento.documento}}</td>
+            <td>{{i.documento.nombre}}</td>
+            <td>{{i.codigo_credito}}</td>
+            <td>{{i.montoprestado}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 {%endif%}
 </html>

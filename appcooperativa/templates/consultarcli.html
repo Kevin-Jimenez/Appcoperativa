@@ -34,6 +34,7 @@
                 <th>Apellido</th>
                 <th>Correo</th>
                 <th>Celular</th>
+                <th>Acciones</th>
             </tr>
             {% for i in cli%}
             <tr>
@@ -42,6 +43,8 @@
                 <td>{{i.apellido}}</td>
                 <td>{{i.correo}}</td>
                 <td>{{i.celular}}</td>
+                <td><a href="/actualizar/{{i.documento}}" type="button" class="btn btn-success">Actualizar</button>
+                    <a href="/eliminar/{{i.documento}}" type="button" class="btn btn-danger">Eliminar</button></td>
             </tr>
             {% endfor %}
         </table>

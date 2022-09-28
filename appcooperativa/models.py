@@ -8,14 +8,17 @@ class Cliente(models.Model):
     correo=models.CharField(max_length=20)
     celular=models.CharField(max_length=15)
 
-    # def __str__(self) -> str:
-    #    return self.documento, self.nombre, self.apellido, self.celular, self.correo, self.celular
+    def __str__(self) -> str:
+        return '%s %s %s %s %s'%(self.documento, self.nombre, self.apellido, self.celular, self.correo, self.celular)
 
 class Lineas_De_Credito(models.Model):
     codigo=models.IntegerField(primary_key=True)
     nombre=models.CharField(max_length=30)
     plazomax=models.IntegerField()
     montomaximo=models.IntegerField()
+
+    def __str__(self):
+        return '%s %s %s %s'%(self.codigo,self.nombre, self.plazomax, self.montomaximo)
 
 class Credito(models.Model):
     codigo_credito=models.IntegerField(primary_key=True)

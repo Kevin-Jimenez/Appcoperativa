@@ -1,0 +1,1 @@
+web: gunicorn testdezpliege.wsgi --log-file -
