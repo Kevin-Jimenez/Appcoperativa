@@ -1,1 +1,1 @@
-web: gunicorn testdezpliege.wsgi
+web: gunicorn cooperativa.wsgi
